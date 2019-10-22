@@ -12,6 +12,9 @@ stdin.on('data', (keyStr) => {
   }
 
   const delay = keyCode === 98 ? 0 : keyCode >= 49 && keyCode <= 57 ? keyCode - 48 : null;
-  if (delay !== null) setTimeout(() => process.stdout.write('beep\n'), delay * 1000);
+  if (delay !== null) {
+    process.stdin.write(`setting timer for ${delay} seconds.\n`);
+    setTimeout(() => process.stdout.write('beep\n'), delay * 1000);
+  }
 
 });

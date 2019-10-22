@@ -7,6 +7,7 @@ stdin.on('data', (keyStr) => {
   const keyCode = +keyStr.charCodeAt();
 
   if (keyCode === 3) {
+    process.stdout.write('Thanks for using me, ciao!\n');
     process.exit();
     return;
   }
